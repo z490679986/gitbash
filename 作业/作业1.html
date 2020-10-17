@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+    <style type="text/css">
+        .ad {
+            position: fixed;
+            right: 0;
+            bottom: 0;
+            width: 424px;
+            height: 245px;
+            background-image: url(img/ad.png);
+            /*这里隐藏了广告，要想看到，设为block*/
+            display: none;
+        }
+        .ad span {
+            position: absolute;
+            right: 0;
+            top: 0;
+            width: 40px;
+            height: 18px;
+            background-image: url(img/h.jpg);
+			cursor: pointer;
+        }
+    </style>
+    <script src="jquery-3.3.1.min.js" type="text/javascript" charset="utf-8"></script>
+    <script>
+        $(function(){
+			$(".ad").stop().slideDown(2000).slideUp(2000).slideDown(2000).fadeOut(1000).fadeIn(1000);
+			$("span").click(function(){
+				$(".ad").stop().fadeOut(1000);
+			});
+		});
+    </script>
+</head>
+<body>
+    <!-- 广告 -->
+    <div class="ad">
+        <span>×</span>
+    </div>
+</body>
+</html>

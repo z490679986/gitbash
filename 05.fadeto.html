@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        #box{
+            background-color: red;
+            width: 50px;
+            height: 50px;
+        }
+    </style>
+    <script src="js/jquery-3.5.1.min.js"></script>
+</head>
+<body>
+    <button>动起来</button>
+    <div id="box">
+        
+    </div>
+
+    <script>
+       //
+       var flag=true;
+       $("button").click(function(){
+            // JQ中判断元素是否显示隐藏的标准做法
+            var odiv=$("#box");
+            if(flag){
+                // 滑动隐藏
+                odiv.fadeTo('400',0.2);
+                flag=false;
+            }else{
+                // 显示
+                odiv.fadeTo('400',0.8);
+                // 
+                flag=true;
+            }
+            
+
+       });
+    </script>
+</body>
+</html>

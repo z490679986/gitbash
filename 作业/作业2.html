@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <style type="text/css">
+        body{ height: 1500px }
+        #layer{ width: 300px; height: 300px; border:1px solid red; background-color: #ddd;
+            position: absolute;
+            /*left:239px;*/
+            display: none;
+         }
+         #close{ position: absolute; top: 8px; right: 10px; cursor: pointer; }
+         #mask{ display: none; background-color:rgba(10,10,10,.6); width: 100%; position: absolute; top:0; left: 0; bottom: 0; right: 0  }
+    </style>
+   <script src="jquery-3.3.1.min.js" type="text/javascript" charset="utf-8"></script>
+</head>
+<body>
+    <!-- 点击触发弹出框 -->
+    <input type="button" id="login" value="登录" name="">
+
+<!-- 弹出框 -->
+<!-- 遮罩层 -->
+<div id="mask"></div>
+<!-- 弹出框盒子 -->
+<div id="layer">
+    <span id="close">X</span>
+    <form>
+        <div>
+            <input type="input" name="">
+        </div>
+        <div>
+            <input type="input" name="">
+        </div>
+        <input type="submit" name="">
+    </form>
+</div>
+
+<script>
+ $(function(){
+	 $("[type=button]").click(function(){
+		 $("#mask").stop().fadeIn(1000);
+		 $("#layer").stop().fadeIn(1200);
+	 });
+	 
+	 $("#close").click(function(){
+		 $("#mask").stop().fadeOut(1000);
+		 $("#layer").stop().fadeOut(1200);
+	 });
+ });
+
+
+
+
+</script> 
+</body>
+</html>

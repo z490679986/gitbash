@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <style type="text/css">
+        *{ margin:0;padding:0; }
+        .pl{ height: 1000px }
+        #floatMenu{ margin:0 auto; width: 1000px }
+		.fixed{
+			position: fixed;
+			top: 0;
+			left: 190px;
+		}
+    </style>
+   <script src="jquery-3.3.1.min.js" type="text/javascript" charset="utf-8"></script>
+    <script>
+     $(function(){
+		 
+		 //获取元素到浏览器顶部的绝对距离
+		 var $floffset=$("#floatMenu").offset().top;
+		 $(window).scroll(function(){
+			 //滚动条滚动的距离
+			 var $winoffset=$(this).scrollTop();
+			 if($winoffset>=$floffset){
+				 $("#floatMenu").addClass("fixed");
+				 $("#floatMenu").stop().fadeTo(500,0.4);
+			 }else{
+				 $("#floatMenu").removeClass("fixed");
+				 $("#floatMenu").stop().fadeTo(500,1);
+			 }
+		 });
+	 });
+    </script>
+</head>
+<body>
+    <div class="pl">
+        
+    </div>
+    <!-- 要吸附的评价条 -->
+    <div id="floatMenu">
+        <img src="img/tb.jpg" width="1000">
+    </div>
+    <div class="pl">
+        
+    </div>
+</body>
+</html>
